@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Favorite Person 🌸</title>
+    <style>
+        /* Import a whimsical, Ghibli-esque font */
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Fredoka+One&display=swap');
+
+        :root {
+            --bg-cream: #fbf7f0;
+            --ghibli-green: #a3b899;
+            --soft-pink: #f6dfeb;
+            --accent-rose: #e8a7a1;
+            --text-color: #5d534a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-cream);
+            color: var(--text-color);
+            font-family: 'Comfortaa', cursive;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Ghibli-inspired soft nature background elements */
+        body::before, body::after {
+            content: '';
+            position: absolute;
+            z-index: 1;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--soft-pink) 0%, rgba(255,255,255,0) 70%);
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        body::before {
+            width: 300px;
+            height: 300px;
+            top: -50px;
+            left: -50px;
+        }
+
+        body::after {
+            width: 400px;
+            height: 400px;
+            bottom: -100px;
+            right: -100px;
+        }
+
+        /* Main Container */
+        .container {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            border: 3px solid var(--ghibli-green);
+            border-radius: 30px;
+            padding: 40px 30px;
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 10px 25px rgba(163, 184, 153, 0.2);
+            z-index: 2;
+            position: relative;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        /* Whimsical Illustrations/Icons placeholders */
+        .illustration-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .icon {
+            font-size: 2rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .icon:nth-child(2) {
+            animation-delay: 0.5s;
+            font-size: 2.5rem;
+        }
+
+        .icon:nth-child(3) {
+            animation-delay: 1s;
+        }
+
+        /* Typography */
+        h1 {
+            font-family: 'Fredoka One', cursive;
+            color: var(--accent-rose);
+            font-size: 2.2rem;
+            line-height: 1.3;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 0px #fff;
+            word-wrap: break-word;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        /* Sparkle Decorations */
+        .sparkle {
+            position: absolute;
+            color: #f7d070;
+            font-size: 1.2rem;
+            animation: twinkle 2s infinite ease-in-out;
+        }
+
+        .s1 { top: 15px; left: 20px; animation-delay: 0s; }
+        .s2 { top: 40px; right: 25px; animation-delay: 0.7s; }
+        .s3 { bottom: 20px; left: 30px; animation-delay: 1.3s; }
+        .s4 { bottom: 40px; right: 30px; animation-delay: 0.3s; }
+
+        /* Interactive Cute Button */
+        .cute-btn {
+            background-color: var(--ghibli-green);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            font-family: 'Fredoka One', cursive;
+            font-size: 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 0px #86997e;
+            transition: all 0.2s ease;
+            outline: none;
+        }
+
+        .cute-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 7px 0px #86997e;
+            background-color: #92a788;
+        }
+
+        .cute-btn:active {
+            transform: translateY(5px);
+            box-shadow: 0 0px 0px #86997e;
+        }
+
+        /* Hidden love note that appears on click */
+        .love-note {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+            margin-top: 0;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: #7a6f64;
+        }
+
+        .love-note.show {
+            max-height: 200px;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px dashed var(--ghibli-green);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        /* Responsive adjustments for smaller phones */
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            .container {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Sparkles around the box -->
+        <span class="sparkle s1">✨</span>
+        <span class="sparkle s2">⭐</span>
+        <span class="sparkle s3">⭐</span>
+        <span class="sparkle s4">✨</span>
+
+        <!-- Whimsical Ghibli-like aesthetic icons (Spirits, Sprouts, Hearts) -->
+        <div class="illustration-container">
+            <span class="icon">🌱</span>
+            <span class="icon">❤️</span>
+            <span class="icon">☁️</span>
+        </div>
+
+        <!-- Your Message -->
+        <h1>Happy 11th Monthsary Mommyy!!</h1>
+        
+        <p>Akala mo nakalimutan ko no?? HAHAHAHHA</p>
+
+        <!-- Cute interactive element -->
+        <button class="cute-btn" onclick="revealNote()">Wag mo i-click! ✨</button>
+        
+        <div class="love-note" id="secretNote">
+            Congrats!! Nanalo ka ng isang ONE DAY AWAY voucher eme. I love youuu alwaysss🌸✨
+        </div>
+    </div>
+
+    <script>
+        function revealNote() {
+            const note = document.getElementById('secretNote');
+            note.classList.toggle('show');
+            
+            // Change button text dynamically
+            const btn = document.querySelector('.cute-btn');
+            if(note.classList.contains('show')) {
+                btn.innerHTML = "Surpisee!! 💕";
+            } else {
+                btn.innerHTML = "Wag mo i-click! ✨";
+            }
+        }
+    </script>
+
+</body>
+</html>
